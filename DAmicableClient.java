@@ -21,6 +21,8 @@ public class DAmicableClient{
 			// start timer
 			millis = System.currentTimeMillis();
 			for(int i = 0; i < serverCnt; ++i){
+				// distribute search range
+				// TODO: distribute task evenly
 				min = max + 1;
 	            max = i == serverCnt-1 ? limit : Math.round(limit*(i+1)/serverCnt);
 				// make thread for each server
@@ -67,7 +69,7 @@ class Result{
 
 		millis = System.currentTimeMillis() - millis;
 		System.out.println(" " + (double)millis/1000 + "sec");
-		
+
 		allRes.addAll(res);
 		++i;
 
