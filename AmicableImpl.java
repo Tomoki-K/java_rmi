@@ -1,5 +1,4 @@
-// リモートサービスの実装のクラスファイル
-
+// implements remote service
 
 import java.rmi.RemoteException ;
 import java.rmi.server.UnicastRemoteObject ;
@@ -32,7 +31,7 @@ public class AmicableImpl extends UnicastRemoteObject implements Amicable{
         if (n == dSum || n % 2 != dSum % 2) return 0;
         return n == divisorSum(dSum) ? dSum : 0;
     }
-	
+
     private static int divisorSum(int n) {
         int sum = 0;
         for (int d = 1; d <= n/2; d++) {
